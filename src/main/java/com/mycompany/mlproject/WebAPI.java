@@ -18,7 +18,8 @@ public class WebAPI {
         
        response.type("application/json");
     DNA dna = new Gson().fromJson(request.body(), DNA.class);
-    if(InterfaceService.isMutant(dna)){
+    dna = new MutantCheck();
+    if(dna.isMutant(dna)){
         return new Gson()
       .toJson(new StandardResponse(StatusResponse.SUCCESS));
     } else { return new Gson()
