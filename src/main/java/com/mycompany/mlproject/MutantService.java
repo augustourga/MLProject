@@ -22,6 +22,13 @@ public class MutantService {
     datastore.save(query);
     return "add query";}
     
+    public String getStats(){
+    
+            //query (total records, mutant records)
+            return "stats";
+            
+    }
+    
 
   
 

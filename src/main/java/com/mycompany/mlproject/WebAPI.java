@@ -36,6 +36,17 @@ public class WebAPI {
             
             
         }, gson::toJson);
-} 
+       
+       
+        get("/stats", (request, response) -> {
+          final  Gson gson = new Gson();
+          response.type("application/json");
+       // process request
+            return mutantService.getStats();
+        
+        }, gson::toJson);
+       }
+       
+ 
     
 }
