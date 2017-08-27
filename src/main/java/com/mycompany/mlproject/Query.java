@@ -4,16 +4,15 @@
  * and open the template in the editor.
  */
 package com.mycompany.mlproject;
+import java.util.List;
 
 /**
  *
  * @author augus
  */
-public enum StatusResponse {
-    SUCCESS ("Success");
-    ERROR ("Error");
-  
-    private String status;       
-    // constructors, getters
+public class Query {
+    
+    public String[] dna;
+    public boolean isMutant;
     
 }
