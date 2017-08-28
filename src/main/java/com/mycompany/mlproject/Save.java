@@ -4,17 +4,11 @@
  * and open the template in the editor.
  */
 package com.mycompany.mlproject;
-import java.util.List;
 
 /**
  *
  * @author augus
  */
-public class Query {
-    
-    public String[] dna;
-    public void dna(String[] strings){
-    dna = strings;
-    }
-    
+public class Save  extends Query {
+    public boolean isMutant;
 }

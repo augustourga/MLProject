@@ -18,23 +18,34 @@ public class WebAPI {
     
     public static void main(String[] args) { 
         
-       post("/mutant/", (request, response) -> {
+       post("/mutant", (request, response) -> {
            Gson gson = new Gson();
+           Save save = new Save();
            MutantCheck mutantCheck = new MutantCheck();
           //ConsoleLog.consoleLog(log, request);
             
             response.type("application/json");
-
-            Query query = gson.fromJson(request.body(), Query.class);
-            query.isMutant = mutantCheck.isMutant(query.dna); 
-            mutantService.addpost(query);
-            if(query.isMutant){
+            /*voy a sacar el contenido del json 
+            y lo tengo que guardar en query.dna, ahora no lo esta haciendo.
+            */Query query = gson.fromJson(request.body(), Query.class);
+            
+            
+            /*una vez que tengo el objeto armado, checkeo si es mutante*/
+            save.isMutant = mutantCheck.isMutant(query.dna); 
+            save.dna = query.dna;
+            
+            /* guardo la consulta tanto el string, como el ismutant*/
+            mutantService.addpost(save);
+            
+            /*en caso de exito devuelve el status 200 ¿esta bien esto?
+            y despues devuelvo el objeto response? */
+            if(save.isMutant){
                 response.status(200);
                 
             } else 
             {  response.status(403);
             }
-            String jsonOutput = gson.toJson(response);
+           String jsonOutput = gson.toJson(response    );
             return jsonOutput;
             
         });

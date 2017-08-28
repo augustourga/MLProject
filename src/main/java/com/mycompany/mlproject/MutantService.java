@@ -16,11 +16,11 @@ import org.mongodb.morphia.Morphia;
  */
 public class MutantService {
     MongoClient client = new MongoClient("localhost", 27017);
-    Datastore datastore = new Morphia().createDatastore(client,"query");
+    Datastore datastore = new Morphia().createDatastore(client,"save");
     
-    public String addpost(Query query){
-    datastore.save(query);
-    return "add query";}
+    public void addpost(Save save){
+    datastore.save(save);
+    }
     
     public String getStats(){
     
