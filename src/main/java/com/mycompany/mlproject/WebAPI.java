@@ -35,18 +35,22 @@ public class WebAPI {
             save.dna = query.dna;
             
             /* guardo la consulta tanto el string, como el ismutant*/
-            mutantService.addpost(save);
+           // mutantService.addpost(save);
             
             /*en caso de exito devuelve el status 200 ¿esta bien esto?
             y despues devuelvo el objeto response? */
-            if(save.isMutant){
+           if(save.isMutant){
                 response.status(200);
+                response.body("i'm a mutant");
+               
                 
             } else 
             {  response.status(403);
+               response.body("i'm not a mutant");
             }
-           String jsonOutput = gson.toJson(response    );
-            return jsonOutput;
+           String jsonOutput = gson.toJson(response.body())    ;
+          return jsonOutput;
+           
             
         });
        
