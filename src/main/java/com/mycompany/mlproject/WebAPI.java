@@ -6,6 +6,7 @@
 package com.mycompany.mlproject;
 
 import static spark.Spark.post;
+import static spark.Spark.get;
 import com.google.gson.Gson;
 
 /**
@@ -18,7 +19,7 @@ public class WebAPI {
     public static void main(String[] args) { 
         
        post("/mutant/", (request, response) -> {
-          final  Gson gson = new Gson();
+           Gson gson = new Gson();
            MutantCheck mutantCheck = new MutantCheck();
           //ConsoleLog.consoleLog(log, request);
             
@@ -28,23 +29,26 @@ public class WebAPI {
             query.isMutant = mutantCheck.isMutant(query.dna); 
             mutantService.addpost(query);
             if(query.isMutant){
-                return response.status(200);
+                response.status(200);
                 
             } else 
-            {  return response.status(403);
+            {  response.status(403);
             }
+            String jsonOutput = gson.toJson(response);
+            return jsonOutput;
             
-            
-        }, gson::toJson);
+        });
        
        
         get("/stats", (request, response) -> {
-          final  Gson gson = new Gson();
+            Gson gson = new Gson();
           response.type("application/json");
        // process request
-            return mutantService.getStats();
+       
+       String jsonOutput = gson.toJson(mutantService.getStats());
+            return jsonOutput;
         
-        }, gson::toJson);
+        });
        }
        
  
