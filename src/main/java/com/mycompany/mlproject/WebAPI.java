@@ -19,7 +19,7 @@ public class WebAPI {
     public static void main(String[] args) { 
        
         port(getHerokuAssignedPort());
-       get("/", (req, res) -> "Hello Heroku World");
+       get("/", (req, res) ->{ return "Welcome to mutant service. We offer you the following services: \\n * Check if a dna sequence belongs to a mutant on (POST) /mutant \\n * Get some stats abouts checks (GET) /stats "} );
         
        post("/mutant", (request, response) -> {
            Gson gson = new Gson();
