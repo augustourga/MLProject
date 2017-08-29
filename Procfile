@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* WebAPI
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* WebAPI.java
