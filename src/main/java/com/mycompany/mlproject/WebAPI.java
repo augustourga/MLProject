@@ -57,10 +57,11 @@ public class WebAPI {
        
         get("/stats", (request, response) -> {
             Gson gson = new Gson();
+            Stats stats = new Stats();
           response.type("application/json");
        // process request
        
-       String jsonOutput = gson.toJson(mutantService.getStats());
+       String jsonOutput = gson.toJson(mutantService.getStats(stats));
             return jsonOutput;
         
         });
