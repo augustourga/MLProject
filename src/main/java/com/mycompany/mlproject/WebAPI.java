@@ -7,6 +7,7 @@ package com.mycompany.mlproject;
 
 import static spark.Spark.post;
 import static spark.Spark.get;
+import static spark.Request;
 import com.google.gson.Gson;
 
 /**
