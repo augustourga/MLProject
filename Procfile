@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* WebAPI main
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.mycompany.mlproject.WebAPI
