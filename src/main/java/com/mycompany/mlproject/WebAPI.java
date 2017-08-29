@@ -19,6 +19,7 @@ public class WebAPI {
     public static void main(String[] args) { 
        
         port(getHerokuAssignedPort());
+       get("/", (req, res) -> "Hello Heroku World");
         
        post("/mutant", (request, response) -> {
            Gson gson = new Gson();
