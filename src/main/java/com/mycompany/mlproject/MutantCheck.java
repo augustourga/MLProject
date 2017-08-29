@@ -27,41 +27,41 @@ public class MutantCheck {
 
                     // Diagonal
                     if (j < n-3) {
-                        String d = "";
-                        char gen = dna[i].charAt(j);
-                        d += gen;
-                        d += dna[i+1].charAt(j+1);
-                        d += dna[i+2].charAt(j+2);
-                        d += dna[i+3].charAt(j+3);
-                        String replaced_string = d.replace(String.valueOf(gen), "");
-                        if (replaced_string.length() == 0) {
+                        String diagonalBuffer = "";
+                        char sequence = dna[i].charAt(j);
+                        diagonalBuffer += sequence;
+                        diagonalBuffer += dna[i+1].charAt(j+1);
+                        diagonalBuffer += dna[i+2].charAt(j+2);
+                        diagonalBuffer += dna[i+3].charAt(j+3);
+                        String newString = diagonalBuffer.replace(String.valueOf(sequence), "");
+                        if (newString.length() == 0) {
                             return true;
                         }
                     }
 
                     // Vertical
-                    String v = "";
-                    char gen = dna[i].charAt(j);
-                    v += gen;
-                    v += dna[i+1].charAt(j);
-                    v += dna[i+2].charAt(j);
-                    v += dna[i+3].charAt(j);
-                    String replaced_string = v.replace(String.valueOf(gen), "");
-                    if (replaced_string.length() == 0) {
+                    String verticalBuffer = "";
+                    char sequence = dna[i].charAt(j);
+                    verticalBuffer += sequence;
+                    verticalBuffer += dna[i+1].charAt(j);
+                    verticalBuffer += dna[i+2].charAt(j);
+                    verticalBuffer += dna[i+3].charAt(j);
+                    String newString = verticalBuffer.replace(String.valueOf(sequence), "");
+                    if (newString.length() == 0) {
                         return true;
                     }
                 }
 
                 // Horizontal
                 if (j < n-3) {
-                    String h = "";
-                    char gen = dna[i].charAt(j);
-                    h += gen;
-                    h += dna[i].charAt(j+1);
-                    h += dna[i].charAt(j+2);
-                    h += dna[i].charAt(j+3);
-                    String replaced_string = h.replace(String.valueOf(gen), "");
-                    if (replaced_string.length() == 0) {
+                    String horizontalBuffer = "";
+                    char sequence = dna[i].charAt(j);
+                    horizontalBuffer += sequence;
+                    horizontalBuffer += dna[i].charAt(j+1);
+                    horizontalBuffer += dna[i].charAt(j+2);
+                    horizontalBuffer += dna[i].charAt(j+3);
+                    String newString = horizontalBuffer.replace(String.valueOf(sequence), "");
+                    if (newString.length() == 0) {
                         return true;
                     }
                 }
