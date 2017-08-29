@@ -20,6 +20,14 @@
             </plugin>
          </plugins>
     </build>
+    
+    
+    <configuration>
+        <appName>MLProject</appName>
+        <processTypes>
+            <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+        </processTypes>
+    </configuration>
      <!-- Dependencias de Maven -->
     <dependencies> <!-- Dependencia Spark Java --> 
         <dependency> 
