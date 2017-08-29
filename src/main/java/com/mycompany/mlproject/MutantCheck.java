@@ -8,7 +8,9 @@ package com.mycompany.mlproject;
 /**
  *
  * @author augus
- */
+ *  *  */
+
+
 public class MutantCheck {
 
     /**
@@ -17,11 +19,14 @@ public class MutantCheck {
      * @return
      */
 
-        
-        
          public boolean isMutant(String[] dna) {
         int n = dna.length;
         for (int i = 0; i < n; i++) {
+            //nxn validate
+               if(dna[i].length() != n){
+                return false;
+                }
+            
             for (int j = 0; j < n; j++) {
                 if (i < n-3) {
 
