@@ -19,7 +19,7 @@ public class WebAPI {
     public static void main(String[] args) { 
        
         port(getHerokuAssignedPort());
-       get("/", (req, res) ->{ return "htmlcontent";} );
+       get("/", (req, res) ->{ return readFile("../utilities/home.html", Charset.defaultCharset());} );
         
        post("/mutant", (request, response) -> {
            Gson gson = new Gson();
