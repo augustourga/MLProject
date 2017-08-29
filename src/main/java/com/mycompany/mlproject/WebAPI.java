@@ -19,62 +19,7 @@ public class WebAPI {
     public static void main(String[] args) { 
        
         port(getHerokuAssignedPort());
-       get("/", (req, res) ->{ return "<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mutant Service</title>
-</head>
-<body>
-        <div class="jumbotron text-center">
-                <h1>Welcome to mutant service</h1>
-                <p>We offer you the following services:</p> 
-              </div>
-              
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <h3>/mutant</h3>
-                    <p>Check if a dna sequence belongs to a mutant on (POST) sending a String[]</p>
-                    <a href="https://augustourga-mutant-service.herokuapp.com/mutant"><p>https://augustourga-mutant-service.herokuapp.com/mutant</p></a>
-                    <button type="button" id="button-see" class="btn btn-primary">See Json example</button>
-
-                    <div class="row" style="margin-top: 5%;">
-                   
-                    <div class="alert alert-info" id="example">
-                            <strong>The sequence must be nxn</strong> (words x lenght)
-                            <p>{ "dna" :  [ "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"] } </p>
-                            <p> <strong>Return:</strong> The sequence belongs to a mutant HTTP-200-OK</p>
-                        </div>
-                     </div> 
-                </div>
-                  <div class="col-sm-6">
-                    <h3>/stats</h3>
-                    <p>Get some stats abouts checks (GET)</p>
-                    <a href="https://augustourga-mutant-service.herokuapp.com/stats"><p>https://augustourga-mutant-service.herokuapp.com/stats</p></a>
-                  </div>
-                  
-                </div>
-              </div>
-
-              <script>
-                   $("#example").hide();
-              $(document).ready(function(){
-                $("#button-see").click(function(){
-                    if($("#example").is(":visible")){
-                        $("#example").hide();
-                        
-                    }else {$("#example").show();}
-                    });
-                });
-              </script>
-</body>
-</html>";} );
+       get("/", (req, res) ->{ return "htmlcontent";} );
         
        post("/mutant", (request, response) -> {
            Gson gson = new Gson();
