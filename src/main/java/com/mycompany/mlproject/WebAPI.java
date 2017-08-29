@@ -17,6 +17,8 @@ public class WebAPI {
    public static MutantService mutantService = new MutantService();
     
     public static void main(String[] args) { 
+       
+        port(getHerokuAssignedPort());
         
        post("/mutant", (request, response) -> {
            Gson gson = new Gson();
@@ -65,7 +67,16 @@ public class WebAPI {
             return jsonOutput;
         
         });
+       
        }
+   
+     static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
        
  
     
