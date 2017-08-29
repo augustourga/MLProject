@@ -39,7 +39,7 @@ public class WebAPI {
             
             
             /*una vez que tengo el objeto armado, checkeo si es mutante*/
-            save.isMutant = mutantCheck.isMutant(query.dna); 
+           // save.isMutant = mutantCheck.isMutant(query.dna); 
             save.dna = query.dna;
             
             /* guardo la consulta tanto el string, como el ismutant*/
@@ -47,15 +47,31 @@ public class WebAPI {
             
             /*en caso de exito devuelve el status 200 ¿esta bien esto?
             y despues devuelvo el objeto response? */
-           if(save.isMutant){
+            String result= mutantCheck.isMutant(query.dna);
+            switch(result){
+             case "true":
+                 
                 response.status(200);
-                response.body("i'm a mutant");
-               
+                response.body("The sequence belongs to a mutant ");
+                save.isMutant = true;
+                     break;
+            case  "false":
                 
-            } else 
-            {  response.status(403);
-               response.body("i'm not a mutant");
+               response.status(403);
+               response.body("The sequence belongs to a human");
+               save.isMutant = false; 
+               break;
+            case  "notNxN":
+               response.status(400);
+               response.body("The sequence must be nxn (words x lenght) ");
+                     break;
+            case  "invalidChar":
+                
+               response.status(400);
+               response.body("Only accept characters (A,T,C,G)");
+                     break;
             }
+           
            String jsonOutput = gson.toJson(response.body())    ;
           return jsonOutput;
            
