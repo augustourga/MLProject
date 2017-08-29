@@ -22,10 +22,14 @@ public class MutantService {
     datastore.save(save);
     }
     
-    public Stats getStats(Stats stats){
+    public void setStats(Stats stats){
     
             //query (total records, mutant records)
-            return stats;
+            int totalRecords= 100;
+            int mutantRecords= 40;
+           stats.count_human_dna= totalRecords;
+           stats.count_mutant_dna= mutantRecords;
+           stats.ratio(mutantRecords, totalRecords);
             
     }
     

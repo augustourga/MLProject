@@ -60,8 +60,8 @@ public class WebAPI {
             Stats stats = new Stats();
           response.type("application/json");
        // process request
-       
-       String jsonOutput = gson.toJson(mutantService.getStats(stats));
+       mutantService.setStats(stats);
+       String jsonOutput = gson.toJson(stats);
             return jsonOutput;
         
         });

@@ -11,13 +11,13 @@ package com.mycompany.mlproject;
  */
 public class Stats {
     
-    public static int count_mutant_dna;
-    public static int count_human_dna;
-    public static double ratio;
+    public  int count_mutant_dna;
+    public  int count_human_dna;
+    public  double ratio;
     
     public  void ratio(int count_mutants, int count_humans){
     
-           ratio = count_mutants/count_humans ;
+           ratio = (double)count_mutants/(double)count_humans ;
     }
     public void stats(){
     
