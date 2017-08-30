@@ -17,4 +17,18 @@ public class Query {
     dna = strings;
     }
     
+    
+      public boolean validate(String[] dna) {
+        int n = dna.length;
+        for (int i = 0; i < n; i++) {
+        if(dna[i].length() != n){return false;}
+            String newString = dna[i].toUpperCase();
+            //newString = newString.replace("[ACTG]","")
+            newString = newString.replace("A", "");
+            newString = newString.replace("C", "");
+            newString = newString.replace("T", "");
+            newString = newString.replace("G", "");
+      if(newString.length() != 0){return false;}
+            }  return true;}
+    
 }
