@@ -20,7 +20,7 @@ public class MutantService {
     public int totalRecords;
     public int mutantRecords;
     
-    public void mutantService(){
+    public void MutantService(){
     totalRecords =0;
     mutantRecords =0;
     

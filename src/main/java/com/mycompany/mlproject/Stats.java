@@ -19,7 +19,7 @@ public class Stats {
     
            ratio = (double)count_mutants/(double)count_humans ;
     }
-    public void stats(){
+    public void Stats(){
     
         count_human_dna =0;
         count_mutant_dna = 0;
