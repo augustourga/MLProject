@@ -25,7 +25,7 @@ public class MutantCheck {
         for (int i = 0; i < n; i++) {
             //nxn validate
           
-               if((i < n-3) && dna[i].length() + dna[i+1].length() + dna[i+2].length() + dna[i+3].length()!= n*4){
+               if((i < n-3) && dna[i].length() + dna[i+1].length() + dna[i+2].length() + dna[i+3].length()  + dna[i+4].length()!= n*5){
                 return "notNxN";
                 }
             
