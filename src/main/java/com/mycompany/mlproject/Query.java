@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.mlproject;
-import java.util.List;
+
 
 /**
  *
@@ -16,5 +16,19 @@ public class Query {
     public void dna(String[] strings){
     dna = strings;
     }
+    
+    
+    public boolean validate() {
+        int n = dna.length;
+        for (int i = 0; i < n; i++) {
+        if(dna[i].length() != n){return false;}
+            String newString = dna[i].toUpperCase();
+            //newString = newString.replace("[ACTG]","")
+            newString = newString.replace("A", "");
+            newString = newString.replace("C", "");
+            newString = newString.replace("T", "");
+            newString = newString.replace("G", "");
+      if(newString.length() > 0){return false;}
+            }  return true;}
     
 }
