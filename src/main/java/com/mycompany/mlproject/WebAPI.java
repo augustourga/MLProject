@@ -32,7 +32,7 @@ public class WebAPI {
            MutantCheck mutantCheck = new MutantCheck();
            Query query = gson.fromJson(request.body(), Query.class);
 
-           if(!query.validate())
+           if(!(query.validate()))
             {
               response.status(400);
               response.body("The sequence must be nxn (words x lenght) and only accept characters (A,T,C,G) ");
