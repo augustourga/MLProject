@@ -16,8 +16,11 @@ public class Stats {
     public  double ratio;
     
     public  void ratio(int count_mutants, int count_humans){
-    
-           ratio = (double)count_mutants/(double)count_humans ;
+            if(count_humans > 0){
+                ratio = (double)count_mutants/(double)count_humans ;
+            }
+        
+           
     }
     public void Stats(){
     

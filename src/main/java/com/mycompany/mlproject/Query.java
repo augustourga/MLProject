@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.mlproject;
-import java.util.List;
+
 
 /**
  *
@@ -28,7 +28,7 @@ public class Query {
             newString = newString.replace("C", "");
             newString = newString.replace("T", "");
             newString = newString.replace("G", "");
-      if(newString.length() != 0){return false;}
+      if(newString.length() > 0){return false;}
             }  return true;}
     
 }
