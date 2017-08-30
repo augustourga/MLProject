@@ -18,7 +18,7 @@ public class Query {
     }
     
     
-      public boolean validate(String[] dna) {
+    public boolean validate() {
         int n = dna.length;
         for (int i = 0; i < n; i++) {
         if(dna[i].length() != n){return false;}
