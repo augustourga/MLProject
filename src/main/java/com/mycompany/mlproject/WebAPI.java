@@ -52,7 +52,7 @@ public class WebAPI {
                response.body("The sequence belongs to a human");
                 
             }
-            //mutantService.addpost(save);
+            mutantService.addpost(save);
             }
             
            
@@ -66,10 +66,10 @@ public class WebAPI {
         get("/stats", (request, response) -> {
             Gson gson = new Gson();
             Stats stats = new Stats();
-          response.type("application/json");
+            response.type("application/json");
        // process request
-       mutantService.setStats(stats);
-       String jsonOutput = gson.toJson(stats);
+           // mutantService.setStats(stats);
+             String jsonOutput = gson.toJson(stats);
             return jsonOutput;
         
         });
