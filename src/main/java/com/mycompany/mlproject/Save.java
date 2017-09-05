@@ -11,4 +11,12 @@ package com.mycompany.mlproject;
  */
 public class Save  extends Query {
     public boolean isMutant;
+    
+public boolean isMutant(){
+
+return this.isMutant;
 }
+
+}
+
+

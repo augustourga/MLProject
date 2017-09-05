@@ -9,6 +9,7 @@ import spark.*;
 import static spark.Spark.*;
 import com.google.gson.Gson;
 
+
 /**
  *
  * @author augus
@@ -70,11 +71,10 @@ public class WebAPI {
        //this endpoint return stats 
         get("/stats", (request, response) -> {
             Gson gson = new Gson();
-            Stats stats = new Stats();
+            
+            Stats stats = mutantService.getStats();
             response.type("application/json");
-       // process request
-           // mutantService.setStats(stats);
-             String jsonOutput = gson.toJson(stats);
+            String jsonOutput = gson.toJson(stats);
             return jsonOutput;
         
         });
