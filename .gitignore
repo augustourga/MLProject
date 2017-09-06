@@ -1,0 +1,62 @@
+# Ignoring backup files
+
+*~
+
+
+
+# Ignoring diff files
+
+*.diff
+
+
+
+# Ignoring kdevelop4 project files
+
+*.kdev4
+
+
+
+# Ignoring vim restore files
+
+*.swp
+
+*.kate-swp
+
+*.swo
+
+
+
+# Ignoring kde4 .directory files
+
+.directory
+
+
+
+# Ignorign windows thumb files
+
+Thumbs.db
+
+
+
+# Ignoring sublime text project files
+
+*.sublime-project
+
+*.sublime-workspace
+
+
+
+# Ignoring configuration file
+
+
+
+# Ignoring temporary assests files
+
+/target/
+
+
+
+
+
+
+/nbproject/

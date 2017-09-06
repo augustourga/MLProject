@@ -17,7 +17,7 @@ public class Query {
     dna = strings;
     }
     
-    
+    //looking for constructions errors
     public boolean validate() {
         int n = dna.length;
         for (int i = 0; i < n; i++) {
