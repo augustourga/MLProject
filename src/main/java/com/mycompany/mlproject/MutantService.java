@@ -43,8 +43,6 @@ public class MutantService {
     totalRecords = query.size();
     //calculate total of mutants
     mutantRecords = (int) query.stream().filter(Save::isMutant).count();
-    //System.out.print("totalRecords " +totalRecords);
-    //System.out.print("mutantRecords " +mutantRecords);
     stats.count_human_dna= totalRecords;
     stats.count_mutant_dna= mutantRecords;
     //calculate ratio
