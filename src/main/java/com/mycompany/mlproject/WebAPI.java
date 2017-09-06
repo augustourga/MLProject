@@ -52,7 +52,7 @@ public class WebAPI {
                response.body("The sequence belongs to a human");
                 
             }
-            mutantService.addpost(save);
+            //mutantService.addpost(save);
             }
             
            
