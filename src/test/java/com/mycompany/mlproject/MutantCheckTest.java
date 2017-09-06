@@ -25,12 +25,9 @@ public class MutantCheckTest {
      */
     @Test
     public void testIsNotMutant() {
-        System.out.println("isMutant");
         String[] dna = new String [] { "ATGCGA","CAGTGC","TTGTGT","AGAACG","CGTCTA","TCACTA"} ;
         MutantCheck instance = new MutantCheck();
-
         assertFalse( instance.isMutant(dna));
-        // TODO review the generated test code and remove the default call to fail.
       
     }
     
@@ -39,12 +36,9 @@ public class MutantCheckTest {
      */
     @Test
      public void testIsMutant() {
-        System.out.println("isMutant");
         String[] dna = new String [] { "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"} ;
         MutantCheck instance = new MutantCheck();
-
         assertTrue( instance.isMutant(dna));
-        // TODO review the generated test code and remove the default call to fail.
       
     }
     

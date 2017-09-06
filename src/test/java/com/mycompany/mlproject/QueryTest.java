@@ -24,7 +24,6 @@ public class QueryTest {
      */
     @Test
     public void testDna() {
-        System.out.println("dna");
         String[] strings = null;
         Query instance = new Query();
         instance.dna(strings);
@@ -35,7 +34,6 @@ public class QueryTest {
      */
     @Test
     public void testNotNxNValidate() {
-        System.out.println("validate");
         Query instance = new Query();
         String[] dna = new String [] { "ATGCGA","CAGTGC","TTGTGT","AGAACG","CGTCTA","TCACT"} ;
         instance.dna(dna);
@@ -46,7 +44,6 @@ public class QueryTest {
      */
     @Test
     public void testNotAcceptedCharValidate() {
-        System.out.println("validate");
         Query instance = new Query();
         String[] dna = new String [] {  "AHGCGA","CAGTGC","TTGTGT","AGAACG","CGTCTA","TCACTA"} ;
         instance.dna(dna);
@@ -57,10 +54,9 @@ public class QueryTest {
      */
     @Test
     public void testValidate() {
-        System.out.println("validate");
         Query instance = new Query();
         String[] dna = new String [] {  "ACGCGA","CAGTGC","TTGTGT","AGAACG","CGTCTA","TCACTA"} ;
-         instance.dna(dna);
+        instance.dna(dna);
         assertTrue(instance.validate());
     }
     

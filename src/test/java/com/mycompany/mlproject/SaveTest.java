@@ -24,7 +24,6 @@ public class SaveTest {
      */
     @Test
     public void testIsMutant() {
-        System.out.println("isMutant");
         Save instance = new Save();
         instance.isMutant=false;
         boolean expResult = false;

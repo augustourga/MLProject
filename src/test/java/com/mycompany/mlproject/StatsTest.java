@@ -24,7 +24,6 @@ public class StatsTest {
      */
     @Test
     public void testStats() {
-        System.out.println("Stats");
         Stats instance = new Stats();
     }
 
@@ -33,7 +32,6 @@ public class StatsTest {
      */
     @Test
     public void testCalculateRatio0() {
-        System.out.println("calculateRatio");
         int count_mutants = 0;
         int count_humans = 0;
         Stats instance = new Stats();
@@ -46,7 +44,6 @@ public class StatsTest {
      */
     @Test
     public void testCalculateRatio() {
-        System.out.println("calculateRatio");
         int count_mutants = 5;
         int count_humans = 34;
         Stats instance = new Stats();
